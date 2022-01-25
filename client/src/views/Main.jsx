@@ -1,8 +1,6 @@
 import Form from '../components/Form';
 import Display from '../components/Display';
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-
+import React, {useState} from 'react';
 
 const Main = () => {
 
