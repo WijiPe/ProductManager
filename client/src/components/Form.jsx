@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 
-const Form = () => {
+const Form = (props) => {
 
+    const {reloadList} = props
     const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
+    const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
 
     const onSubmitHandler = e => {
@@ -17,10 +18,11 @@ const Form = () => {
         })
             .then(res=>{
                 setTitle("")
-                setPrice("")
+                setPrice(0)
                 setDescription("")
+                reloadList()
             })
-            .catch(err=>console.log(err))
+            .catch(err=>console.log(err.response.data))
     }
 
     return (
